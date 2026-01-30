@@ -1,0 +1,30 @@
+import random
+
+print("welcome to isaac tboi simulator")
+print("-------------------------------")
+
+print("how many dices dost thou wanna roll ykwim")
+### validate input
+while True:
+    try:
+        numberpicked = int(input("choose the interger between 1 and 10 cuh"))
+        if(numberpicked > 0 and numberpicked < 10):
+            break
+        else:
+            print("wrong input!!! try again bluddington")
+    except:
+        print("please put an interger bro!!")
+
+def rollDice(amountofDice):
+    totalSum = 0
+    possibleFaces = [1,2,3,4,5,6]
+    for die in range(amountofDice):
+        roll = random.choice(possibleFaces)
+        print("die ", die + 1, ": ", roll)
+        totalSum += roll
+    avarage = totalSum / amountofDice
+    print("all yo die results there cuh: ", totalSum)
+    print("yo avarage roll is: ", avarage)
+
+
+rollDice(numberpicked)
